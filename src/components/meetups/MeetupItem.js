@@ -3,7 +3,7 @@ import classes from "./MeetupItem.module.css";
 
 function MeetupItem(props) {
   return (
-    <li className={classes.item}>
+    <li className={classes.item} key={props.key}>
       <Card>
         <div className={classes.image}>
           <img src={props.image} alt=""></img>

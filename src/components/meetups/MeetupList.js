@@ -10,6 +10,7 @@ function MeetupList(props) {
             {" "}
             <MeetupItem
               id={data.id}
+              key={data.key}
               title={data.title}
               image={data.image}
               address={data.address}
