@@ -1,4 +1,6 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import FavContext from "../../store/favourite-context";
 import classes from "./MainNav.module.css";
 
 //namning classname as module corresponds to the component and we could import it as
@@ -7,6 +9,8 @@ import classes from "./MainNav.module.css";
 //object.property classes.header
 
 function MainNav() {
+  const Favctx = useContext(FavContext);
+
   return (
     <header className={classes.header}>
       <div className={classes.logo}>React Mettups</div>
@@ -19,7 +23,10 @@ function MainNav() {
             <Link to="/new-meetup">New Meetups</Link>
           </li>
           <li>
-            <Link to="/favourite">Favourite</Link>
+            <Link to="/favourite">
+              Favourite
+              <span className={classes.badge}>{Favctx.totalFav}</span>
+            </Link>
           </li>
         </ul>
       </nav>
